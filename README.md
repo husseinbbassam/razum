@@ -12,8 +12,6 @@
 
 Razum is a leading digital transformation company based in Slovenia, specializing in mobile applications, web platforms, and custom software solutions. This website showcases our services, portfolio, and features an AI-powered consultant to help potential clients understand how we can assist with their projects.
 
-**Live Demo**: [View on AI Studio](https://ai.studio/apps/drive/1n6LpIBr1BbVx4B0QPbXOo9-LT64dbjI1)
-
 ## ✨ Features
 
 - 🎨 **Modern UI/UX**: Bold, contemporary design with smooth animations
