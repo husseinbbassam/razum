@@ -1,8 +1,20 @@
 {
-  "name": "razum-|-innovative-it-solutions",
-  "private": true,
-  "version": "0.0.0",
+  "name": "razum",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "description": "Razum - Innovative IT Solutions | Leading digital transformation company in Slovenia",
+  "keywords": ["react", "vite", "typescript", "ai", "it-solutions", "web-development"],
+  "author": "Razum d.o.o.",
+  "license": "MIT",
+  "homepage": "https://razum.si",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/husseinbbassam/razum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/husseinbbassam/razum/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -19,5 +31,9 @@
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
