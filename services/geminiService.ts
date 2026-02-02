@@ -1,9 +1,25 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!apiKey) {
+  console.warn('VITE_GEMINI_API_KEY is not set. AI features will be limited.');
+}
+
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export async function getProjectConsultation(query: string) {
+  // Check if AI is available
+  if (!ai) {
+    console.error('AI service not initialized: API key is missing');
+    return {
+      advice: "AI consultant is currently unavailable. Please contact us directly for assistance.",
+      suggestedServices: [],
+      nextStep: "Contact us at info@razum.si"
+    };
+  }
+
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
@@ -34,9 +50,9 @@ export async function getProjectConsultation(query: string) {
   } catch (error) {
     console.error("Consultation error:", error);
     return {
-      advice: "Oprostite, trenutno ne morem procesirati vaše zahteve. Prosimo, kontaktirajte nas direktno.",
+      advice: "Sorry, we cannot process your request at this time. Please contact us directly.",
       suggestedServices: [],
-      nextStep: "Kontaktirajte nas na info@razum.si"
+      nextStep: "Contact us at info@razum.si"
     };
   }
 }
